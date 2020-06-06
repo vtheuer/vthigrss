@@ -23,8 +23,8 @@ async function makeFeed(profile) {
     edge_media_to_caption, 
     taken_at_timestamp
   }}) => feed.item({
-    title: (edge_media_to_caption.edges.length ? edge_media_to_caption.edges[0].node.text : '[No title]') + 
-      (is_video ? '(video)' : ''),
+    title: (is_video ? 'Video: ' : '') + 
+      (edge_media_to_caption.edges.length ? edge_media_to_caption.edges[0].node.text : '[No title]'),      
     description: `<img src="${display_url}"/>`,
     url: `https://instagram.com/p/${shortcode}/`,
     date: taken_at_timestamp * 1000
