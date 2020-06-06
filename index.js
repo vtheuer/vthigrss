@@ -30,7 +30,7 @@ async function makeFeed(profile) {
     date: taken_at_timestamp * 1000
   }));
 
-  writeFileSync(profile + '.xml', feed.xml(), 'utf8');
+  writeFileSync(profile + '.xml', feed.xml().replace(/<lastBuildDate>[^<]+<\/lastBuildDate>/, ''), 'utf8');
 }
 
 process.argv.slice(2).map(makeFeed);
