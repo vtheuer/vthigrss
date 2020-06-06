@@ -10,7 +10,7 @@ async function makeFeed(profile) {
   const feed = new RSS({
     title: profile,
     description: profile,
-    feed_url: 'https://raw.githack.com/vtheuer/vthigrss/master/${profile}.xml',
+    feed_url: `https://raw.githack.com/vtheuer/vthigrss/master/${profile}.xml`,
     site_url: url,
     image_url: user.profile_pic_url,
     ttl: '1440'
